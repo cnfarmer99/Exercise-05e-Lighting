@@ -1,39 +1,4 @@
-# Exercise-05e-Lighting
-Exercise for MSCH-C220, 3 November 2020
 
-The purpose of this exercise is for you to explore 3D lighting and camera movement in Godot. There are many steps, and some of the concepts are a little complicated, so I would recommend that you stop and test frequently. I have tried to be as clear as possible.
-
-This exercise is loosely based on the How to light a 3d scene in Godot (3d tutorial) by GDQuest. The YouTube video is
-[available here](https://www.youtube.com/watch?v=iamttSmxA2I).
-
-
-This exercise is different from the GDQuest tutorial in distinct ways, so please follow the directions I provide. The video may help you to visualize anything you might find confusing, however.
-
---- 
-
-Fork this repository. When that process has completed, make sure that the top of the repository reads [your username]/Exercise-05e-Lighting. Edit the LICENSE and replace BL-MSCH-C220-F20 with your full name. Commit your changes.
-
-Clone the repository to a Local Path on your computer.
-
-Open Godot. Import the project.godot file and open the "Lighting" project.
-
-In World.tscn, I have provided a starting place for the exercise: the scene contains a parent Spatial node (named World), a Position3D node, and a Spatial node (named Pivot). I have also included several files in the Assets folder, which we will use during this exercise.
-
-In the Assets folder, you will find scene.gltf. This is a [3D model of a small cabin](https://sketchfab.com/3d-models/gr-5df64141235040749103749123e43010) created by luyssport and released under a CC Attribution-NonCommerical-ShareAlike license. This is the model we will use for exploring how light sources work in Godot.
-
-The first step is to tell Godot how to import the scene. In the FileSystem panel, highlight res://Assets/scene.gltf. Then select the Import tab (in the Scene panel). Under Materials, make sure Location is set to Mesh and Storage is set to Files (.tres). Under Meshes, make sure Light Baking is set to Enable. You should then push the Reimport button at the bottom of the panel.
-
-After the scene has been reimported, double-click on scene.gltf in the FileSystem panel. When the dialogue message appears, select "New Inherited". If you reimported the scene correctly, you should see the cabin appear in the main workspace.
-
-Click on the scene icon next to the Cabin node. A message will appear warning you that the scene was imported, push the "create a new scene" button. When that scene appears, click on the eye icon next to sky and water002. This will cause those nodes (and their corresponding meshes) to disappear. Save the Cabin scene as res://Cabin.tscn, and return to the World scene.
-
-Right-click on the Position3D node in the Scene Panel, and Instance Child Scene. Select res://Cabin.tscn. Rename the new node as Cabin.
-
-Select the Position3D node, and in the Inspector, change Spatial->Transform->Translation.y = 6
-
-Right click on the Pivot node and Add Child Node. Choose Camera. Select the Camera node and in the Inspector, check the box next to Current. In Spatial->Transform. Change Translation.y = 6 and Translation.z = 5
-
-With the Camera selected, you should now see a checkbox (labeled Preview) in the top left corner of the Viewport. If you check that box, you should see a fairly-close view of the right side of the house. Test it, and then leave it unchecked.
 
 Godot, by default, creates a procedurally-generated skybox for 3D games with a blue, cloudless sky (which reflects on the meshes in the scene. The next step will be to replace this with a custom skybox and allow Godot to illuminate the cabin with indirect lighting.
 
@@ -81,6 +46,11 @@ Quit Godot. In GitHub desktop, add a summary message, commit your changes and pu
 Now edit the README.md file. When you have finished editing, commit your changes, and then turn in the URL of the main repository page (https://github.com/[username]/Exercise-05e-Lighting) on Canvas.
 
 The final state of the file should be as follows (replacing the "Created by" information with your name):
+
+
+
+
+
 ```
 # Exercise-05e-Lighting
 Exercise for MSCH-C220, 3 November 2020
